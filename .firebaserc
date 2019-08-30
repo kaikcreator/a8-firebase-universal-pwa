@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "my-project-6643e": {
+      "hosting": {
+        "eoriol-v8": [
+          "my-project-6643e"
+        ]
+      }
+    }
+  }
+}
