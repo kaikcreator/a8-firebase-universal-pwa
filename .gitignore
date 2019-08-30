@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/functions/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run
@@ -43,6 +44,7 @@ testem.log
 
 # firebase
 .firebase/*.cache
+firebase-debug.log
 
 # System Files
 .DS_Store

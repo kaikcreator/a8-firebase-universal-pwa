@@ -14,6 +14,20 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## SSR
+
+Run `ng run build:ssr` to build the whole project. Then, start the SSR by running `ng run serve:ssr`.
+
+## Firebase with SSR
+
+Run `ng run build:firebase` to build the whole project and the firebase functions.
+To start firebase simulator, run `ng run serve:firebase`.
+To deploy both hosting and functions into firebase, run: `firebase deploy`
+
+## Firebase (only hosting)
+
+Run `ng deploy` to build the whole project and deploy it automatically into firebase hosting.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
