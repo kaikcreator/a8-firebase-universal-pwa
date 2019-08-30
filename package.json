@@ -4,14 +4,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run eoriol-v8:server:production --bundleDependencies all"
+    "build:client-and-server-bundles": "ng build --prod && ng run eoriol-v8:server:production --bundleDependencies all",
+    "build": "ng build --prod && npm run copy:hosting && npm run build:ssr && npm run build:functions",
+    "copy:hosting": "cp -r ./dist/browser/* ./public && rm ./public/index.html",
+    "build:functions": "npm run --prefix functions build"
   },
   "private": true,
   "dependencies": {
