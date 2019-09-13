@@ -22,14 +22,13 @@ import {join} from 'path';
 
 // Express server
 export const app = express();
-console.log("[SERVER FILE ACCESSED]");
 
 const PORT = process.env.PORT || 3999;
 const DIST_FOLDER = join(process.cwd(), 'dist/browser');
 
+
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP, ngExpressEngine, provideModuleMap} = require('./dist/server/main');
-console.log("[SERVER ngExpressEngine]: ", ngExpressEngine);
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
@@ -58,6 +57,3 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Node Express server listening on http://localhost:${PORT}`);
 });
-
-
-console.log("[SERVER APP is]: ", JSON.stringify(app));

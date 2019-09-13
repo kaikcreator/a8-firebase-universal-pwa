@@ -146,7 +146,8 @@
               "optimization": {
                 "scripts": false,
                 "styles": true
-              }
+              },
+              "bundleDependencies": "all"
             }
           }
         },

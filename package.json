@@ -11,11 +11,12 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run eoriol-v8:server:production --bundleDependencies all",
+    "build:client-and-server-bundles": "ng build --prod && ng run eoriol-v8:server:production",
     "build:firebase": "npm run build:ssr && npm run build:functions && npm run rm:public-index",
     "serve:firebase": "firebase serve",
     "rm:public-index": "rm ./dist/browser/index.html",
-    "build:functions": "npm run --prefix functions build"
+    "build:functions": "npm run --prefix functions build",
+    "build:from-server-forwards": "ng run eoriol-v8:server:production && npm run compile:server && npm run build:functions && npm run rm:public-index"
   },
   "private": true,
   "dependencies": {
